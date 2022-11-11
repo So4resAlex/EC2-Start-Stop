@@ -53,6 +53,17 @@ Na etapa 5, copie e cole o seguinte código no painel do editor no editor de có
 
 Exemplo de código de função: [iniciando instâncias do EC2](https://github.com/So4resAlex/EC2-Start-Stop/blob/main/lambda_EC2_Start.py)
 
+```python
+import boto3
+region = 'us-east-1'
+instances = ['i-001e2d04e37ccde3b']
+ec2 = boto3.client('ec2', region_name=region)
+
+def lambda_handler(event, context):
+    print('Starting instances')
+    ec2.start_instances(InstanceIds=instances)
+```
+
 Teste suas funções do Lambda
 1.    No console do Lambda, escolha Funções.
 
