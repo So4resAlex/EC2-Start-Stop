@@ -26,7 +26,7 @@ Em Função existente, escolha a função do IAM que você criou.
 
 Exemplo de código de função: [interrompendo instâncias do EC2](https://github.com/So4resAlex/EC2-Start-Stop/blob/main/lambda_EC2_Stop.py)
 
-```
+```python
 
 import boto3
 region = 'us-east-1' //Para a variavel region adicione a região que as suas instancia estão. 
