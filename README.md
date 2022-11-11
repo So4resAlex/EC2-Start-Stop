@@ -1,4 +1,3 @@
-#Em construção
 # EC2-Start-Stop 
 
 #### Este repositório foi baseado nas documentações abaixo. 
