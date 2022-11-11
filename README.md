@@ -7,7 +7,38 @@
 [EC2 Start Stop automatically using Lambda function video](https://www.youtube.com/watch?v=Yq-z8yT7Aq0)
 
 Para utilizar as funções Lambda de [Start](https://github.com/So4resAlex/EC2-Start-Stop/blob/main/lambda_EC2_Start.py) e [Stop](https://github.com/So4resAlex/EC2-Start-Stop/blob/main/lambda_EC2_Stop.py)
-você deve criar uma Politica no IAM.
+Crie uma política e uma função de execução do IAM para a função do Lambda
+1.    [Crie uma política do IAM](https://aws.amazon.com/pt/premiumsupport/knowledge-center/start-stop-lambda-eventbridge/) usando o editor de políticas JSON. Copie e cole o seguinte documento de política JSON no editor de políticas:
+```jyson
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:Start*",
+        "ec2:Stop*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+
+
+2.    [Crie um perfil do IAM para o Lambda.](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html#roles-creatingrole-service-console)
+
+Importante: ao anexar uma política de permissões ao Lambda, certifique-se de escolher a política do IAM que acabou de criar.
 
 1.    No console do Lambda, escolha Criar função.
 
