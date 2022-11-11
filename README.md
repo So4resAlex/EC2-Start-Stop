@@ -8,7 +8,7 @@
 Para utilizar as funções Lambda de [Start](https://github.com/So4resAlex/EC2-Start-Stop/blob/main/lambda_EC2_Start.py) e [Stop](https://github.com/So4resAlex/EC2-Start-Stop/blob/main/lambda_EC2_Stop.py)
 Crie uma política e uma função de execução do IAM para a função do Lambda
 1.    [Crie uma política do IAM](https://aws.amazon.com/pt/premiumsupport/knowledge-center/start-stop-lambda-eventbridge/) usando o editor de políticas JSON. Copie e cole o seguinte documento de política JSON no editor de políticas:
-```jyson
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
